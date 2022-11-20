@@ -1,6 +1,18 @@
+// -------- REACT IMPORTS -------- //
 import React, { useEffect, useState } from 'react';
-import Error from './components/Error';
+import { Route, Link } from 'react-router-dom';
+
+// -------- COMPONENT IMPORTS -------- //
+import Assesment from './Components/Assesment';
+import Error from './Components/Error';
+import Home from './Components/Home';
+
+
+// -------- CSS IMPORTS -------- //
 import './App.css';
+
+
+// ======== BEGIN APP -------- //
 
 function App() {
   const [monoCodes, setMonoCodes] = useState([])
@@ -63,7 +75,25 @@ function App() {
     <div className="App">
       <header className="App-header">
       </header>
-      {error ? <Error error={error} /> : null }
+      <main>
+        <Route exact path='/home' render={() => 
+            <Home 
+              monoCodesData={monoCodes}
+              splitCodesData={splitCodes}
+              canCodesData={canCodes}
+            />
+          } />
+        <Route exact path='/assesment' render={() => 
+          <Assesment 
+            monoCodesData={monoCodes}
+            splitCodesData={splitCodes}
+            canCodesData={canCodes}            
+            />
+          } />
+          <div>
+          {error ? <Error error={error} /> : null }
+          </div>
+      </main>
     </div>
   );
 }
