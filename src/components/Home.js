@@ -1,7 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import Assesment from './Assesment';
 
 const Home = ({ data }) => {
     const [getStartedButton, setGetStartedButton] = useState(true)
@@ -10,7 +9,9 @@ const Home = ({ data }) => {
     <div>
         <section>
             {getStartedButton ? 
+            <Link to='/assesment'>
                 <button onClick={() => setGetStartedButton(false)}>GET STARTED</button> 
+                </Link>
                 : null}
         </section>
         <section>
@@ -27,7 +28,7 @@ const Home = ({ data }) => {
                         <button className="can-codes button-link">CAN CODES</button>
                     </Link>
                     <Link to='/assesment'>
-                        <button className="all-codes button-link">ALL CODES</button>
+                        <button className="all-codes button-link">MONO CODES</button>
                     </Link>
                 </div> }
         </section>
