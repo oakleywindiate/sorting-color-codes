@@ -6,7 +6,9 @@ import { Route, Link } from 'react-router-dom';
 import Assesment from './Components/Assesment';
 import Error from './Components/Error';
 import Home from './Components/Home';
+import CanCodes from './Components/CanCodes';
 import MonoCodes from './Components/MonoCodes';
+import SplitCodes from './Components/SplitCodes';
 
 
 // -------- CSS IMPORTS -------- //
@@ -96,6 +98,16 @@ function App() {
             monoCodesData={monoCodes}            
             />
           } />
+        <Route exact path='/assesment-split-codes' render={() => 
+          <SplitCodes 
+            splitCodesData={splitCodes}            
+            />
+          } />  
+        <Route exact path='/assesment-can-codes' render={() => 
+          <CanCodes 
+            canCodesData={canCodes}            
+            />
+          } />  
           <div>
           {error ? <Error error={error} /> : null }
           </div>
