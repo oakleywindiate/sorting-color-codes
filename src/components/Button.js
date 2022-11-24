@@ -25,22 +25,33 @@ const Button = ({ item, index, color }) => {
       checkCorrect()
       checkIncorrect()
     }, [clickedColor])
+
+    useEffect(() => {
+        setClickedColor(null)
+        setCorrectAnswer(null)
+        setIncorrectAnswer(null)
+        checkCorrect()
+        checkIncorrect()
+      }, [color])
     
     
 
   return (
     <section>
-        <div key={index}>
-            <button className={item} onClick={() =>  {
-                setClickedColor(item)
-                }
-            }>{item}</button>
+        <section>
+            <div key={index}>
+                <button className={item} onClick={() =>  {
+                    setClickedColor(item)
+
+                    }
+                }>{item}</button>
+            </div>
+        </section>
+        <div>
+            {clickedColor && correctAnswer ? <Correct /> : null}
         </div>
         <div>
-            {correctAnswer ? <Correct /> : null}
-        </div>
-        <div>
-            {incorrectAnswer ? <Incorrect /> : null}
+            {clickedColor && incorrectAnswer ? <Incorrect /> : null}
         </div>
     </section>
   )

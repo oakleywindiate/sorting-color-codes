@@ -48,7 +48,7 @@ const RandomColors = ({ color }) => {
 
     useEffect(() => {
         randomColorGenerator()
-    }, [])
+    }, [color])
     
 
   return (
