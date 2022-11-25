@@ -6,6 +6,7 @@ import { Route, Link } from 'react-router-dom';
 import Assesment from './Components/Assesment';
 import Error from './Components/Error';
 import Home from './Components/Home';
+import AllCodes from './Components/AllCodes';
 import CanCodes from './Components/CanCodes';
 import MonoCodes from './Components/MonoCodes';
 import SplitCodes from './Components/SplitCodes';
@@ -108,7 +109,14 @@ function App() {
             canCodesData={canCodes}            
             />
           } />  
-          <div>
+        <Route exact path='/assesment-all-codes' render={() => 
+          <AllCodes 
+            canCodesData={canCodes} 
+            monoCodesData={monoCodes}    
+            splitCodesData={splitCodes}          
+            />
+          } />  
+          <div>    
           {error ? <Error error={error} /> : null }
           </div>
       </main>
