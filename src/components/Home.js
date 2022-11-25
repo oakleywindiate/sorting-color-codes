@@ -28,7 +28,7 @@ const Home = ({ data }) => {
                         <button className="can-codes button-link">CAN CODES</button>
                     </Link>
                     <Link to='/assesment'>
-                        <button className="all-codes button-link">MONO CODES</button>
+                        <button className="all-codes button-link">ALL CODES</button>
                     </Link>
                 </div> }
         </section>

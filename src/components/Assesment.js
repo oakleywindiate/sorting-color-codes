@@ -70,7 +70,7 @@ const Assesment = () => {
                 <button>START THE TEST</button>  
             </Link> : null}
         {allSelect ? 
-            <Link to='/assesment-split-codes'>
+            <Link to='/assesment-all-codes'>
                 <button>START THE TEST</button>  
             </Link> : null}         
     </section>
