@@ -2,8 +2,9 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import Button from './Button'
 
-const RandomColors = ({ color }) => {
+const RandomColors = ({ color, streaks }) => {
     const [randomColors, setRandomColors] = useState(null)
+    const [updateStreaks, setUpdateStreaks] = useState(0)
 
     const randomColorGenerator = () => {
         const colors = [
@@ -57,11 +58,12 @@ const RandomColors = ({ color }) => {
         <section>
         {randomColors.map((item, index) => {
             
-            return <Button item={item} key={index} color={color}/>
+            return <Button item={item} key={index} color={color} setUpdateStreaks={setUpdateStreaks} updateStreaks={updateStreaks}/>
             })
         }
     </section>
         : null } 
+    <div>{updateStreaks}</div>    
     </section>
   )
 }

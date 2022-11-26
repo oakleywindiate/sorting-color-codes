@@ -93,11 +93,11 @@ function App() {
             splitCodesData={splitCodes}
             canCodesData={canCodes}            
             />
-          } />
+          } />  
         <Route exact path='/assesment-mono-codes' render={() => 
           <MonoCodes 
             monoCodesData={monoCodes}            
-            />
+            /> 
           } />
         <Route exact path='/assesment-split-codes' render={() => 
           <SplitCodes 

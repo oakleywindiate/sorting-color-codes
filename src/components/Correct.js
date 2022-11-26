@@ -1,7 +1,11 @@
 import React from 'react'
 
 export default function Correct() {
+
+
   return (
-    <div>Correct</div>
+    <section>
+      <div>CORRECT</div>
+    </section>
   )
 }
