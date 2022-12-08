@@ -4,14 +4,16 @@ import { useState, useEffect } from 'react'
 import Correct from './Correct'
 import Incorrect from './Incorrect'
 
-const Button = ({ item, index, color }) => {
+const Button = ({ item, index, color, setUpdateStreaks, updateStreaks }) => {
     const [clickedColor, setClickedColor] = useState(null)
     const [correctAnswer, setCorrectAnswer] = useState(false)
     const [incorrectAnswer, setIncorrectAnswer] = useState(false)
+    const [disableSelectButtons, setDisableSelectButtons] = useState(false)
 
     const checkCorrect = () => {
         if (color === clickedColor && clickedColor) {
             setCorrectAnswer(true)
+            setUpdateStreaks(updateStreaks + 1)
         }
     }
 
@@ -22,16 +24,18 @@ const Button = ({ item, index, color }) => {
     }
 
     useEffect(() => {
-      checkCorrect()
-      checkIncorrect()
+        checkCorrect()
+        checkIncorrect()
+        setDisableSelectButtons(true)
     }, [clickedColor])
 
     useEffect(() => {
         setClickedColor(null)
-        setCorrectAnswer(null)
-        setIncorrectAnswer(null)
+        setCorrectAnswer(false)
+        setIncorrectAnswer(false)
         checkCorrect()
         checkIncorrect()
+        setDisableSelectButtons(null)
       }, [color])
     
     
@@ -41,11 +45,13 @@ const Button = ({ item, index, color }) => {
         <section>
             <div key={index}>
                 <button className={item} onClick={() =>  {
+                    setClickedColor(null)
+                    setIncorrectAnswer(false)
                     setClickedColor(item)
-
+                    setDisableSelectButtons(true)
                     }
                 }>{item}</button>
-            </div>
+            </div> 
         </section>
         <div>
             {clickedColor && correctAnswer ? <Correct /> : null}

@@ -5,6 +5,7 @@ import { Route, Link } from 'react-router-dom';
 // -------- COMPONENT IMPORTS -------- //
 import Assesment from './Components/Assesment';
 import Error from './Components/Error';
+import Header from './Components/Header';
 import Home from './Components/Home';
 import AllCodes from './Components/AllCodes';
 import CanCodes from './Components/CanCodes';
@@ -23,6 +24,7 @@ function App() {
   const [splitCodes, setSplitCodes] = useState([])
   const [canCodes, setCanCodes] = useState([])
   const [error, setError] = useState(null)
+
 
 // -------- FETCH CALLS -------- //
 
@@ -78,6 +80,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <Header />
       </header>
       <main>
         <Route exact path='/home' render={() => 
@@ -93,11 +96,11 @@ function App() {
             splitCodesData={splitCodes}
             canCodesData={canCodes}            
             />
-          } />
+          } />  
         <Route exact path='/assesment-mono-codes' render={() => 
           <MonoCodes 
             monoCodesData={monoCodes}            
-            />
+            /> 
           } />
         <Route exact path='/assesment-split-codes' render={() => 
           <SplitCodes 
