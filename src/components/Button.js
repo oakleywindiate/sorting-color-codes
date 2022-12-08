@@ -8,8 +8,7 @@ const Button = ({ item, index, color, setUpdateStreaks, updateStreaks }) => {
     const [clickedColor, setClickedColor] = useState(null)
     const [correctAnswer, setCorrectAnswer] = useState(false)
     const [incorrectAnswer, setIncorrectAnswer] = useState(false)
-    
-
+    const [disableSelectButtons, setDisableSelectButtons] = useState(false)
 
     const checkCorrect = () => {
         if (color === clickedColor && clickedColor) {
@@ -27,6 +26,7 @@ const Button = ({ item, index, color, setUpdateStreaks, updateStreaks }) => {
     useEffect(() => {
         checkCorrect()
         checkIncorrect()
+        setDisableSelectButtons(true)
     }, [clickedColor])
 
     useEffect(() => {
@@ -35,6 +35,7 @@ const Button = ({ item, index, color, setUpdateStreaks, updateStreaks }) => {
         setIncorrectAnswer(false)
         checkCorrect()
         checkIncorrect()
+        setDisableSelectButtons(null)
       }, [color])
     
     
@@ -45,15 +46,15 @@ const Button = ({ item, index, color, setUpdateStreaks, updateStreaks }) => {
             <div key={index}>
                 <button className={item} onClick={() =>  {
                     setClickedColor(null)
-                    setIncorrectAnswer(null)
+                    setIncorrectAnswer(false)
                     setClickedColor(item)
-
+                    setDisableSelectButtons(true)
                     }
                 }>{item}</button>
-            </div>
+            </div> 
         </section>
         <div>
-            {clickedColor && correctAnswer ? <Correct updateStreaks={updateStreaks}/> : null}
+            {clickedColor && correctAnswer ? <Correct /> : null}
         </div>
         <div>
             {clickedColor && incorrectAnswer ? <Incorrect /> : null}

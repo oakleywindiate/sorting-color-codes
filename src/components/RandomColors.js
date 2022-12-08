@@ -1,10 +1,18 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-import Button from './Button'
+import Correct from './Correct'
+import Incorrect from './Incorrect'
 
-const RandomColors = ({ color, streaks }) => {
+const RandomColors = ({ color, increaseStreaks, nextQuestion }) => {
     const [randomColors, setRandomColors] = useState(null)
-    const [updateStreaks, setUpdateStreaks] = useState(0)
+    const [clickedColor, setClickedColor] = useState(null)
+    const [correctAnswer, setCorrectAnswer] = useState(false)
+    const [incorrectAnswer, setIncorrectAnswer] = useState(false)
+
+    // MODAL STATE MANAGEMENT
+    const [showCorrectModal, setShowCorrectModal] = useState(false);
+    const [showIncorrectModal, setShowIncorrectModal] = useState(false);
+
 
     const randomColorGenerator = () => {
         const colors = [
@@ -33,9 +41,7 @@ const RandomColors = ({ color, streaks }) => {
             }
             return acc
         }, [])
-        let combine = createArray.concat(color)
-        // setRandomColors([combine])
-
+        let combine = createArray.concat(color).sort((a,b) => 0.5 - Math.random());
         flattenArray(combine)
     }
 
@@ -44,26 +50,52 @@ const RandomColors = ({ color, streaks }) => {
             acc.push(item)
             return acc
         }, [])
+
         setRandomColors(formatColors)
+    }
+
+    const checkCorrect = (event) => {
+        let compareClickedColor = event.target.id
+        if (compareClickedColor === color) {
+            setClickedColor(compareClickedColor)
+            setCorrectAnswer(true)
+            increaseStreaks()
+        } else {
+            setClickedColor(compareClickedColor)
+            setIncorrectAnswer(true)
+        }
     }
 
     useEffect(() => {
         randomColorGenerator()
+        setClickedColor(null)
+        setCorrectAnswer(false)
+        setIncorrectAnswer(false)
     }, [color])
     
 
   return (
     <section>
-        {randomColors ? 
         <section>
-        {randomColors.map((item, index) => {
-            
-            return <Button item={item} key={index} color={color} setUpdateStreaks={setUpdateStreaks} updateStreaks={updateStreaks}/>
-            })
-        }
-    </section>
-        : null } 
-    <div>{updateStreaks}</div>    
+            {randomColors && !clickedColor ?
+                <section>
+                    {randomColors.map((item, index) => {
+                    return <button id={item} key={index} onClick={checkCorrect}>{item}</button>
+                    })}
+                </section>
+            : null}
+            {randomColors && clickedColor ?
+                <section>
+                    {randomColors.map((item, index) => {
+                    return <button id={item} key={index} disabled={true}>{item}</button>
+                    })}
+                </section>
+            : null}
+        </section>
+        <section>
+            {correctAnswer ? <Correct setShowCorrectModal={setShowCorrectModal} nextQuestion={nextQuestion}/> : null}
+            {incorrectAnswer ? <Incorrect setShowIncorrectModal={setShowIncorrectModal} nextQuestion={nextQuestion}/> : null}
+        </section>
     </section>
   )
 }
