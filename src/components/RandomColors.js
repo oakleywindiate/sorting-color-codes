@@ -29,7 +29,7 @@ const RandomColors = ({ color, increaseStreaks, nextQuestion }) => {
             "RED", 
             "WHITE" ]
 
-        let randomizeColorArray = colors.sort(() => .5 - Math.random()).slice(0, 4);
+        let randomizeColorArray = colors.sort(() => .5 - Math.random()).slice(0, 3);
     
         compareColors(randomizeColorArray)
     }
@@ -76,18 +76,18 @@ const RandomColors = ({ color, increaseStreaks, nextQuestion }) => {
 
   return (
     <section>
-        <section>
+        <section className="random-color-wrapper">
             {randomColors && !clickedColor ?
-                <section>
+                <section className="random-color">
                     {randomColors.map((item, index) => {
-                    return <button id={item} key={index} onClick={checkCorrect}>{item}</button>
+                    return <button className="color-button" id={item} key={index} onClick={checkCorrect}>{item}</button>
                     })}
                 </section>
             : null}
             {randomColors && clickedColor ?
-                <section>
+                <section className="random-color">
                     {randomColors.map((item, index) => {
-                    return <button id={item} key={index} disabled={true}>{item}</button>
+                    return <button className="color-button" id={item} key={index} disabled={true}>{item}</button>
                     })}
                 </section>
             : null}

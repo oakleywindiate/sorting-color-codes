@@ -1,0 +1,132 @@
+.selection-section {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    height: 100vh;
+}
+
+.sort-text {
+    font-family: 'Varela Round', sans-serif;
+    font-weight: 700;
+    color: #FFF;
+    font-size: 31px;
+    margin: 0 0 50px;
+}
+
+.box-delivery, .box-delivery-two {
+    animation: updown 2s ease infinite;
+}
+
+@keyframes updown {
+    0% {
+      transform: translateY(-1%);
+    }
+  
+    50% {
+      transform: translateY(1%);
+    }
+  
+    100% {
+      transform: translateY(-1%);
+    }
+  }
+
+  .link-section {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 2em;
+    padding-bottom: 2em;
+}
+
+  .button-link {
+    padding: 2em;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: transparent;
+    color: #FFF;
+    border-color: hsl(0deg 22% 96% / 58%);
+    text-align: center;
+    border-radius: 11px;
+    -webkit-border-radius: 11px;
+	-moz-border-radius: 11px;
+	-o-border-radius: 11px;
+    box-shadow: 0 .2em hsl(0deg 22% 96% / 58%)v; 
+    font-family: 'Varela Round', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+  }
+
+  .button-link:hover {
+    color: #FFF;
+    box-shadow: 0 .2em #FFF; 
+    border-color: #FFF;
+    background-color: transparent;
+    opacity: .90;
+  }
+
+  .button-link:active {
+	box-shadow: none;
+	position: relative;
+	top: .2em;
+}
+
+  .icon {
+    font-size: 2em;
+  }
+
+  .box-delivery {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 25%;
+    margin-bottom: -2em;
+  }
+
+  .box-delivery-two {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 25%;
+  }
+
+  .box-delivery-div {
+    padding-top: 5em;
+    z-index: 1;
+  }
+
+  .start-test {
+    text-align: center;
+    display: inline-block;
+    background-color: #5cc70d;
+    border-color: transparent;
+    min-width: 300px;
+    border-radius: 11px;
+    -webkit-border-radius: 11px;
+	-moz-border-radius: 11px;
+	-o-border-radius: 11px;
+    height: 50px;
+    box-shadow: 0 .2em gray; 
+    font-family: 'Varela Round', sans-serif;
+    font-weight: 700;
+    color: #FFF;
+    font-size: 18px;
+  }
+
+  .start-test:active {
+	box-shadow: none;
+	position: relative;
+	top: .2em;
+}
+
+.start-button-section {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
