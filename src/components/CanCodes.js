@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import ExitModal from './ExitModal'
 import RandomColors from './RandomColors'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faFire } from '@fortawesome/free-solid-svg-icons'
+import './Codes.css';
 
 const CanCodes = ({ canCodesData }) => {
     const [randomizedCanCodesObject, setRandomizedCanCodesObject] = useState(null)
@@ -38,21 +41,30 @@ const CanCodes = ({ canCodesData }) => {
     }, [])
 
     return (
-        <section>
+        <section className="testing-section-wrapper">
+            <div className="top-div">
             <div>
-                <button onClick={openExitModal}>EXIT</button>
+                <button className="exit-button-assessment" onClick={openExitModal}>X</button>
                     {showExitModal ? <ExitModal setShowExitModal={setShowExitModal} /> : null}
             </div>
-            <div>
-                <div>{updateStreaks}</div>
+            <div className="streaks-div">
+                <FontAwesomeIcon className="faFire icon" icon={faFire} />
+                <div clasName="streaks-number">{updateStreaks}</div>
+            </div>    
             </div>
             {randomizedCanCodesObject ? 
+            <section className="testing-section">
                 <section>
-                    <div>{randomizedCanCodesObject[0].state_postal}</div>
-                    <div>{randomizedCanCodesObject[0].color}</div>
-                    <div>{randomizedCanCodesObject[0].code}</div>
-                    <RandomColors color={randomizedCanCodesObject[0].color} increaseStreaks={increaseStreaks} nextQuestion={nextQuestion}/>
+                <h3 className="question">Where would you place a package with this code?</h3>
+                </section>
+                <section className="code-section">
+                    <div className="code">{randomizedCanCodesObject[0].state_postal}</div>
+                    <div className="code">{randomizedCanCodesObject[0].code}</div>
                 </section> 
+                <section>
+                    <RandomColors color={randomizedCanCodesObject[0].color} increaseStreaks={increaseStreaks} nextQuestion={nextQuestion}/>
+                </section>
+            </section>    
             : <div>No</div> }
         </section>
     )

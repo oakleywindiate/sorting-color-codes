@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { Route, Link } from 'react-router-dom';
 
 // -------- COMPONENT IMPORTS -------- //
-import Assesment from './Components/Assesment';
+import Assesment from './Components/Assessment';
 import Error from './Components/Error';
 import Header from './Components/Header';
 import Home from './Components/Home';
@@ -79,9 +79,9 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
+      {/* <header className="App-header">
         <Header />
-      </header>
+      </header> */}
       <main>
         <Route exact path='/home' render={() => 
             <Home 
@@ -90,29 +90,29 @@ function App() {
               canCodesData={canCodes}
             />
           } />
-        <Route exact path='/assesment' render={() => 
+        <Route exact path='/assessment' render={() => 
           <Assesment 
             monoCodesData={monoCodes}
             splitCodesData={splitCodes}
             canCodesData={canCodes}            
             />
           } />  
-        <Route exact path='/assesment-mono-codes' render={() => 
+        <Route exact path='/assessment-mono-codes' render={() => 
           <MonoCodes 
             monoCodesData={monoCodes}            
             /> 
           } />
-        <Route exact path='/assesment-split-codes' render={() => 
+        <Route exact path='/assessment-split-codes' render={() => 
           <SplitCodes 
             splitCodesData={splitCodes}            
             />
           } />  
-        <Route exact path='/assesment-can-codes' render={() => 
+        <Route exact path='/assessment-can-codes' render={() => 
           <CanCodes 
             canCodesData={canCodes}            
             />
           } />  
-        <Route exact path='/assesment-all-codes' render={() => 
+        <Route exact path='/assessment-all-codes' render={() => 
           <AllCodes 
             canCodesData={canCodes} 
             monoCodesData={monoCodes}    

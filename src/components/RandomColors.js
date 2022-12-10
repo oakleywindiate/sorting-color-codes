@@ -41,7 +41,7 @@ const RandomColors = ({ color, increaseStreaks, nextQuestion }) => {
             }
             return acc
         }, [])
-        let combine = createArray.concat(color).sort((a,b) => 0.5 - Math.random());
+        let combine = createArray.slice(0, 3).concat(color).sort((a,b) => 0.5 - Math.random());
         flattenArray(combine)
     }
 
@@ -76,25 +76,29 @@ const RandomColors = ({ color, increaseStreaks, nextQuestion }) => {
 
   return (
     <section>
-        <section>
+        <section className="random-color-wrapper">
             {randomColors && !clickedColor ?
-                <section>
+                <section className="random-color">
                     {randomColors.map((item, index) => {
-                    return <button id={item} key={index} onClick={checkCorrect}>{item}</button>
+                    return <button className="color-button" id={item} key={index} onClick={checkCorrect}>{item}</button>
                     })}
                 </section>
             : null}
             {randomColors && clickedColor ?
-                <section>
+                <section className="random-color">
                     {randomColors.map((item, index) => {
-                    return <button id={item} key={index} disabled={true}>{item}</button>
+                        if (clickedColor === item) {
+                            return <button className="color-button-disabled-clicked" id={item} key={index} disabled={true}>{item}</button> 
+                        } else {
+                            return <button className="color-button-disabled" id={item} key={index} disabled={true}>{item}</button>
+                        }
                     })}
                 </section>
             : null}
         </section>
         <section>
             {correctAnswer ? <Correct setShowCorrectModal={setShowCorrectModal} nextQuestion={nextQuestion}/> : null}
-            {incorrectAnswer ? <Incorrect setShowIncorrectModal={setShowIncorrectModal} nextQuestion={nextQuestion}/> : null}
+            {incorrectAnswer ? <Incorrect setShowIncorrectModal={setShowIncorrectModal} nextQuestion={nextQuestion} color={color}/> : null}
         </section>
     </section>
   )
