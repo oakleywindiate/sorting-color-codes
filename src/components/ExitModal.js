@@ -15,12 +15,12 @@ const ExitModal = ({ setShowExitModal }) => {
   return ReactDom.createPortal(
     <div className="container" ref={modalRef} onClick={closeModal}>
       <div className="modal">
-        <h2>Are you sure you want to quit?</h2>
-        <div>
-          <button onClick={() => setShowExitModal(false)}>STAY</button>
-        <Link to='/home'>
-            <button>QUIT</button>
-        </Link>
+        <h2 className="exit-modal-question">Are you sure you want to quit?</h2>
+        <div className="exit-modal-buttons">
+          <button className="exit-modal-stay" onClick={() => setShowExitModal(false)}>STAY</button>
+          <Link to='/home'>
+              <button className="exit-modal-go">QUIT</button>
+          </Link>
       </div>
       </div>
     </div>,

@@ -46,9 +46,8 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    background-color: transparent;
+    background-color: #000;
     color: #FFF;
-    border-color: hsl(0deg 22% 96% / 58%);
     text-align: center;
     border-radius: 11px;
     -webkit-border-radius: 11px;
@@ -58,6 +57,9 @@
     font-family: 'Varela Round', sans-serif;
     font-weight: 700;
     font-size: 18px;
+    border: 2px solid hsl(0deg 22% 96% / 58%);
+    background-color: #000;
+    box-shadow: 0 .2em hsl(0deg 22% 96% / 58%); 
   }
 
   .button-link:hover {
