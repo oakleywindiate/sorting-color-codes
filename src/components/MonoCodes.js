@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import ExitModal from './ExitModal'
 import RandomColors from './RandomColors'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faFire } from '@fortawesome/free-solid-svg-icons'
 
 const MonoCodes = ({ monoCodesData }) => {
     const [randomizedMonoCodesObject, setRandomizedMonoCodesObject] = useState(null)
@@ -39,20 +41,29 @@ const MonoCodes = ({ monoCodesData }) => {
     
 
     return (
-        <section>
-            <div>
-                <button onClick={openExitModal}>EXIT</button>
-                    {showExitModal ? <ExitModal setShowExitModal={setShowExitModal} /> : null}
-            </div>
-            <div>
-                <div>{updateStreaks}</div>
+        <section className="testing-section-wrapper">
+            <div className="top-div">
+                <div>
+                    <button className="exit-button-assessment" onClick={openExitModal}>X</button>
+                        {showExitModal ? <ExitModal setShowExitModal={setShowExitModal} /> : null}
+                </div>
+            <div className="streaks-div">
+                <FontAwesomeIcon className="faFire icon" icon={faFire} />
+                <div clasName="streaks-number">{updateStreaks}</div>
+            </div>    
             </div>
             {randomizedMonoCodesObject ? 
-            <section>
-                <div>{randomizedMonoCodesObject[0].state_postal}</div>
-                <div>{randomizedMonoCodesObject[0].color}</div>
-                <RandomColors color={randomizedMonoCodesObject[0].color} increaseStreaks={increaseStreaks} nextQuestion={nextQuestion}/>
-            </section> 
+            <section className="testing-section">
+                <section>
+                    <h3 className="question">Where would you place a package with this code?</h3>
+                </section>
+                <section className="code-section">
+                    <div className="code">{randomizedMonoCodesObject[0].state_postal}</div>
+                </section> 
+                <section>
+                    <RandomColors color={randomizedMonoCodesObject[0].color} increaseStreaks={increaseStreaks} nextQuestion={nextQuestion}/>
+            </section>
+        </section>
             : <div>No</div> }
         </section>
     )

@@ -3,6 +3,10 @@ import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import ExitModal from './ExitModal'
 import RandomColors from './RandomColors'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faFire } from '@fortawesome/free-solid-svg-icons'
+import './Codes.css';
+
 
 const AllCodes = ({ canCodesData, monoCodesData, splitCodesData }) => {
     const [randomizedAllCodesObject, setRandomizedAllCodesObject] = useState(null)
@@ -41,21 +45,30 @@ const AllCodes = ({ canCodesData, monoCodesData, splitCodesData }) => {
     }, [])
 
     return (
-        <section>
+        <section className="testing-section-wrapper">
+            <div className="top-div">
             <div>
-                <button onClick={openExitModal}>EXIT</button>
+                <button className="exit-button-assessment" onClick={openExitModal}>X</button>
                     {showExitModal ? <ExitModal setShowExitModal={setShowExitModal} /> : null}
             </div>
-            <div>
-                <div>{updateStreaks}</div>
+            <div className="streaks-div">
+                <FontAwesomeIcon className="faFire icon" icon={faFire} />
+                <div clasName="streaks-number">{updateStreaks}</div>
+            </div>    
             </div>
             {randomizedAllCodesObject ? 
+            <section className="testing-section">
                 <section>
-                    <div>{randomizedAllCodesObject[0].state_postal}</div>
-                    <div>{randomizedAllCodesObject[0].color}</div>
-                    <div>{randomizedAllCodesObject[0].code}</div>
-                    <RandomColors color={randomizedAllCodesObject[0].color} increaseStreaks={increaseStreaks} nextQuestion={nextQuestion}/>
+                <h3 className="question">Where would you place a package with this code?</h3>
+                </section>
+                <section className="code-section">
+                    <div className="code">{randomizedAllCodesObject[0].state_postal}</div>
+                    <div className="code">{randomizedAllCodesObject[0].code}</div>
                 </section> 
+                <section>
+                    <RandomColors color={randomizedAllCodesObject[0].color} increaseStreaks={increaseStreaks} nextQuestion={nextQuestion}/>
+                </section>
+            </section>    
             : <div>No</div> }
         </section>
     )

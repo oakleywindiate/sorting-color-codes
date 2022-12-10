@@ -42,18 +42,20 @@ const CanCodes = ({ canCodesData }) => {
 
     return (
         <section className="testing-section-wrapper">
+            <div className="top-div">
             <div>
-                <button onClick={openExitModal}>EXIT</button>
+                <button className="exit-button-assessment" onClick={openExitModal}>X</button>
                     {showExitModal ? <ExitModal setShowExitModal={setShowExitModal} /> : null}
             </div>
-            <div>
-            <FontAwesomeIcon className="faFire icon" icon={faFire} />
-                <div>{updateStreaks}</div>
+            <div className="streaks-div">
+                <FontAwesomeIcon className="faFire icon" icon={faFire} />
+                <div clasName="streaks-number">{updateStreaks}</div>
+            </div>    
             </div>
             {randomizedCanCodesObject ? 
             <section className="testing-section">
                 <section>
-                <h3 className="question">What color does this code belong to?</h3>
+                <h3 className="question">Where would you place a package with this code?</h3>
                 </section>
                 <section className="code-section">
                     <div className="code">{randomizedCanCodesObject[0].state_postal}</div>
