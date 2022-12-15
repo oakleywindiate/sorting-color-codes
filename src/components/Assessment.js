@@ -11,6 +11,7 @@ import { faArrowsSplitUpAndLeft } from '@fortawesome/free-solid-svg-icons'
 import { faArrowTurnUp } from '@fortawesome/free-solid-svg-icons'
 import { faEarthAmericas } from '@fortawesome/free-solid-svg-icons'
 import { faMailBulk } from '@fortawesome/free-solid-svg-icons'
+import { motion } from 'framer-motion'
 
 
 const Assesment = () => {
@@ -24,7 +25,20 @@ const Assesment = () => {
   return (
     <section>
         {selectCategory ?
-            <section className="selection-section">
+            <motion.section 
+            initial={{
+                opacity: 0
+            }}
+            animate={{
+                opacity: 1
+            }}
+            transition={{
+                duration: 1
+            }}
+            exit={{
+                opacity: 0
+            }}
+            className="selection-section">
                 <section className="all-assessment-section">
                     <div className="sort-text">I want to learn...</div>
                     <section className="link-section">
@@ -78,38 +92,127 @@ const Assesment = () => {
                         </Link>
                     </section>    
                 </section>
-                <div className="box-delivery-div">
+                <motion.div 
+                initial={{
+                    opacity: 0
+                }}
+                animate={{
+                    opacity: 1
+                }}
+                transition={{
+                    duration: 2
+                }}
+                exit={{
+                    opacity: 0
+                }}
+                className="box-delivery-div">
                     <img className="box-delivery" src={DeliveryBoxOne}/> 
-                </div>
-            </section> 
+                </motion.div>
+            </motion.section> 
         : null }
         <section className="start-button-section">
             {!startButton ? 
-                <section>
+                <motion.section
+                initial={{
+                    opacity: 0
+                }}
+                animate={{
+                    opacity: 1
+                }}
+                transition={{
+                    duration: 1
+                }}
+                exit={{
+                    opacity: 0
+                }}>
                     <div className="sort-text">Let's get started</div>
-                </section> : null} 
+                </motion.section> : null} 
 
             {monoSelect ? 
                 <Link to='/assessment-mono-codes'>
-                    <button className="start-test">START THE TEST</button>  
+                    <button 
+                    initial={{
+                        opacity: 0
+                    }}
+                    animate={{
+                        opacity: 1
+                    }}
+                    transition={{
+                        duration: 1
+                    }}
+                    exit={{
+                        opacity: 0
+                    }}
+                    className="start-test">START THE TEST</button>  
                 </Link> : null}
             {splitSelect ? 
                 <Link to='/assessment-split-codes'>
-                    <button className="start-test">START THE TEST</button>  
+                    <button 
+                    initial={{
+                        opacity: 0
+                    }}
+                    animate={{
+                        opacity: 1
+                    }}
+                    transition={{
+                        duration: 1
+                    }}
+                    exit={{
+                        opacity: 0
+                    }}
+                    className="start-test">START THE TEST</button>  
                 </Link> : null}
             {canSelect ? 
                 <Link to='/assessment-can-codes'>
-                    <button className="start-test">START THE TEST</button>  
+                    <button 
+                    initial={{
+                        opacity: 0
+                    }}
+                    animate={{
+                        opacity: 1
+                    }}
+                    transition={{
+                        duration: 1
+                    }}
+                    exit={{
+                        opacity: 0
+                    }}
+                    className="start-test">START THE TEST</button>  
                 </Link> : null}
             {allSelect ? 
                 <Link to='/assessment-all-codes'>
-                    <button className="start-test">START THE TEST</button>  
+                    <button 
+                    initial={{
+                        opacity: 0
+                    }}
+                    animate={{
+                        opacity: 1
+                    }}
+                    transition={{
+                        duration: 1
+                    }}
+                    exit={{
+                        opacity: 0
+                    }}
+                    className="start-test">START THE TEST</button>  
                 </Link> : null}         
         </section>
         {!startButton ? 
-        <div className="box-delivery-div-two">
+        <motion.div 
+        initial={{
+            opacity: 0
+        }}
+        animate={{
+            opacity: 1
+        }}
+        transition={{
+            duration: 2
+        }}
+        exit={{
+            opacity: 0
+        }}className="box-delivery-div-two">
             <img className="box-delivery-two" src={DeliveryBoxTwo}/> 
-        </div> : null }
+        </motion.div> : null }
     </section>
   )
 }

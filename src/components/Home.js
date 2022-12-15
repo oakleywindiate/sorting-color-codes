@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Box from '../shippingBox.png'
 import './Home.css'
+import { motion } from 'framer-motion';
 
 const Home = ({ data }) => {
     const [getStartedButton, setGetStartedButton] = useState(true)
@@ -11,7 +12,17 @@ const Home = ({ data }) => {
     <div>
         <section>
             {getStartedButton ? 
-                <div className="home-page">
+                <motion.div 
+                initial={{
+                    opacity: 0
+                }}
+                animate={{
+                    opacity: 1
+                }}
+                transition={{
+                    duration: 2
+                }}
+                className="home-page">
                     <div className="home-left">
                         <img className="box-home" src={Box}/>  
                     </div>  
@@ -23,7 +34,7 @@ const Home = ({ data }) => {
                             </Link>
                         </div>
                     </div> 
-                </div>
+                </motion.div>
             : null}
         </section>
     </div>

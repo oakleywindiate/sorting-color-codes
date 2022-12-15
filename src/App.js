@@ -14,6 +14,7 @@ import SplitCodes from './Components/SplitCodes';
 
 
 // -------- CSS IMPORTS -------- //
+import { AnimatePresence } from 'framer-motion'
 import './App.css';
 
 
@@ -78,52 +79,54 @@ function App() {
   // -------- RENDER -------- //
 
   return (
-    <div className="App">
-      {/* <header className="App-header">
-        <Header />
-      </header> */}
-      <main>
-        <Route exact path='/home' render={() => 
-            <Home 
+    <AnimatePresence exitBeforeEnter>
+      <div className="App">
+        {/* <header className="App-header">
+          <Header />
+        </header> */}
+        <main>
+          <Route exact path='/home' render={() => 
+              <Home 
+                monoCodesData={monoCodes}
+                splitCodesData={splitCodes}
+                canCodesData={canCodes}
+              />
+            } />
+          <Route exact path='/assessment' render={() => 
+            <Assesment 
               monoCodesData={monoCodes}
               splitCodesData={splitCodes}
-              canCodesData={canCodes}
-            />
-          } />
-        <Route exact path='/assessment' render={() => 
-          <Assesment 
-            monoCodesData={monoCodes}
-            splitCodesData={splitCodes}
-            canCodesData={canCodes}            
-            />
-          } />  
-        <Route exact path='/assessment-mono-codes' render={() => 
-          <MonoCodes 
-            monoCodesData={monoCodes}            
-            /> 
-          } />
-        <Route exact path='/assessment-split-codes' render={() => 
-          <SplitCodes 
-            splitCodesData={splitCodes}            
-            />
-          } />  
-        <Route exact path='/assessment-can-codes' render={() => 
-          <CanCodes 
-            canCodesData={canCodes}            
-            />
-          } />  
-        <Route exact path='/assessment-all-codes' render={() => 
-          <AllCodes 
-            canCodesData={canCodes} 
-            monoCodesData={monoCodes}    
-            splitCodesData={splitCodes}          
-            />
-          } />  
-          <div>    
-          {error ? <Error error={error} /> : null }
-          </div>
-      </main>
-    </div>
+              canCodesData={canCodes}            
+              />
+            } />  
+          <Route exact path='/assessment-mono-codes' render={() => 
+            <MonoCodes 
+              monoCodesData={monoCodes}            
+              /> 
+            } />
+          <Route exact path='/assessment-split-codes' render={() => 
+            <SplitCodes 
+              splitCodesData={splitCodes}            
+              />
+            } />  
+          <Route exact path='/assessment-can-codes' render={() => 
+            <CanCodes 
+              canCodesData={canCodes}            
+              />
+            } />  
+          <Route exact path='/assessment-all-codes' render={() => 
+            <AllCodes 
+              canCodesData={canCodes} 
+              monoCodesData={monoCodes}    
+              splitCodesData={splitCodes}          
+              />
+            } />  
+            <div>    
+            {error ? <Error error={error} /> : null }
+            </div>
+        </main>
+      </div>
+    </AnimatePresence>
   );
 }
 
