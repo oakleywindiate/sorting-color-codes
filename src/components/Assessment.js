@@ -1,6 +1,8 @@
 import React from 'react'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+
+// -------- CSS IMPORTS -------- //
 import DeliveryBoxOne from '../deliveryOne.png' 
 import DeliveryBoxTwo from '../deliveryTwo.png' 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
