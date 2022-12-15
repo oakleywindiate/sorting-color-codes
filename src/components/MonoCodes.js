@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import ExitModal from './ExitModal'
 import RandomColors from './RandomColors'
