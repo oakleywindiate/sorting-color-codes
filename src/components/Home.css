@@ -27,6 +27,7 @@
 
 .box-home {
     width: 75%;
+    filter: drop-shadow(0 0 0.75rem rgba(255, 255, 255, 0.767));
     animation: updown 2s ease infinite;
 }
 
@@ -53,14 +54,19 @@
     min-width: 300px;
     border-radius: 11px;
     -webkit-border-radius: 11px;
-	-moz-border-radius: 11px;
-	-o-border-radius: 11px;
+	  -moz-border-radius: 11px;
+	  -o-border-radius: 11px;
     height: 50px;
     box-shadow: 0 .2em gray; 
     font-family: 'Varela Round', sans-serif;
     font-weight: 700;
     color: #FFF;
     font-size: 18px;
+}
+
+.get-started-button:hover {
+  filter: drop-shadow(0 0 0.25rem rgba(255, 255, 255, 0.767));
+  background-color: #63d610;
 }
 
 .get-started-button:active {

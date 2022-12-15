@@ -63,7 +63,7 @@ const AllCodes = ({ canCodesData, monoCodesData, splitCodesData }) => {
                 </section>
                 <section className="code-section">
                     <div className="code">{randomizedAllCodesObject[0].state_postal}</div>
-                    <div className="code">{randomizedAllCodesObject[0].code}</div>
+                    {randomizedAllCodesObject ? <div className="code">{randomizedAllCodesObject[0].code}</div> : null}
                 </section> 
                 <section>
                     <RandomColors color={randomizedAllCodesObject[0].color} increaseStreaks={increaseStreaks} nextQuestion={nextQuestion}/>

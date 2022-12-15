@@ -1,6 +1,8 @@
 .testing-section-wrapper {
     background-color: #FFF;
+    width: 100vw;
     height: 100vh;
+    position: absolute;
 } 
 
 .testing-section {
@@ -55,8 +57,8 @@
 
   .color-button:active {
     box-shadow: none;
-	position: relative;
-	top: .2em;
+	  position: relative;
+	  top: .2em;
   }
 
   .color-button:hover {
@@ -116,7 +118,7 @@
 
   .top-div {
     display: flex;
-    height: 20vh;
+    height: 15vh;
     align-items: center;
     justify-content: space-between;
     margin: 0px 50px 0;
