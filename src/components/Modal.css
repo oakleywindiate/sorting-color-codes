@@ -82,12 +82,10 @@
     cursor: pointer;
   }
 
-
-  .container-correct {
-    z-index: 1;
-    width: 100vw;
+  .container-correct,
+  .container-incorrect {
+    width: 100%;
     height: 20vh;
-    background: #cbf5ab;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -95,23 +93,15 @@
     position: absolute;
     bottom: 0;
     left: 0;
-    animation: animate-correct 0.3s;
-    transition: top 0.4s, opacity 0.4s;
+    animation: fadeIn .7s, slideIn .8s linear;
+  }
+
+  .container-correct {
+    background: #cbf5ab;
   }
 
   .container-incorrect {
-    z-index: 1;
-    width: 100vw;
-    height: 20vh;
     background: #eec0c1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    animation: animate-correct 0.3s;
   }
 
   .modal-correct,
@@ -182,43 +172,6 @@
     color: #c02020;
   }
 
-  @keyframes animate {
-    from {
-      transform: scale(0.5);
-    }
-    to {
-      transform: scale(1);
-    }
-  }
-
-  @keyframes animate-correct {
-    from {
-        bottom: -300px;
-        opacity: 0;
-        transform: 1s;
-      }
-    
-      to {
-        bottom: 0;
-        opacity: 1;
-        transform: 1s;
-      }
-  }
-
-  @keyframes animate-incorrect {
-    from {
-        bottom: -300px;
-        opacity: 0;
-        transform: 1s;
-      }
-    
-      to {
-        bottom: 0;
-        opacity: 1;
-        transform: 1s;
-      }
-  }
-
   .next-button-incorrect{
     background-color: #ee3c3c;
     text-align: center;
@@ -266,3 +219,40 @@
   .next-button-correct:hover {
     background-color: #6fce27;
   }
+
+  @keyframes animate {
+    from {
+      transform: scale(0.5);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
+
+  @keyframes slideIn {
+    0% {
+      transform: translateY(400px);
+      animation-timing-function: ease-out;
+    }
+    60% {
+      transform: translateY(-10px);
+      animation-timing-function: ease-in;
+    }
+    80% {
+      transform: translateY(5px);
+      animation-timing-function: ease-out;
+    }
+    100% {
+      transform: translateY(0px);
+      animation-timing-function: ease-in;
+    }
+  }
+  
+  /* @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  } */

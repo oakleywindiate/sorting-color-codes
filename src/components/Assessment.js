@@ -1,6 +1,8 @@
 import React from 'react'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+
+// -------- CSS IMPORTS -------- //
 import DeliveryBoxOne from '../deliveryOne.png' 
 import DeliveryBoxTwo from '../deliveryTwo.png' 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
@@ -23,56 +25,58 @@ const Assesment = () => {
     <section>
         {selectCategory ?
             <section className="selection-section">
-                <div className="sort-text">I want to learn...</div>
-                <section className="link-section">
-                    <Link to='/assessment'>
-                        <button onClick={() => {
-                                        setStartButton(false) 
-                                        setSelectCategory(false)
-                                        setMonoSelect(true)
+                <section className="all-assessment-section">
+                    <div className="sort-text">I want to learn...</div>
+                    <section className="link-section">
+                        <Link to='/assessment'>
+                            <button onClick={() => {
+                                            setStartButton(false) 
+                                            setSelectCategory(false)
+                                            setMonoSelect(true)
+                                        }
+                                    } 
+                                    className="mono-codes button-link">
+                                <FontAwesomeIcon className="faArrowTurnUp icon" icon={faArrowTurnUp} />
+                                <h3>Mono</h3>
+                                </button>
+                        </Link>
+                        <Link to='/assessment'>
+                            <button onClick={() => {
+                                            setStartButton(false)
+                                            setSelectCategory(false)
+                                            setSplitSelect(true)
+                                        }
                                     }
-                                } 
-                                className="mono-codes button-link">
-                            <FontAwesomeIcon className="faArrowTurnUp icon" icon={faArrowTurnUp} />
-                            <h3>Mono</h3>
+                                    className="split-codes button-link">
+                                <FontAwesomeIcon className="faArrowsSplitUpAndLeft icon" icon={faArrowsSplitUpAndLeft} />
+                                <h3>Split</h3>
                             </button>
-                    </Link>
-                    <Link to='/assessment'>
-                        <button onClick={() => {
-                                        setStartButton(false)
-                                        setSelectCategory(false)
-                                        setSplitSelect(true)
-                                    }
-                                }
-                                className="split-codes button-link">
-                            <FontAwesomeIcon className="faArrowsSplitUpAndLeft icon" icon={faArrowsSplitUpAndLeft} />
-                            <h3>Split</h3>
-                        </button>
-                    </Link>
-                    <Link to='/assessment'>
-                        <button onClick={() => {
-                                        setStartButton(false)
-                                        setSelectCategory(false)
-                                        setCanSelect(true)
-                                    }
-                                } 
-                                className="can-codes button-link">
-                            <FontAwesomeIcon className="faEarthAmericas icon" icon={faEarthAmericas} />
-                            <h3>Canada</h3>    
-                            </button>
-                    </Link>
-                    <Link to='/assessment'>
-                        <button onClick={() => {
-                                        setStartButton(false)
-                                        setSelectCategory(false)
-                                        setAllSelect(true)
-                                    }
-                                } 
-                                className="all-codes button-link">
-                            <FontAwesomeIcon className="faMailBulk icon" icon={faMailBulk} />
-                            <h3>All Codes</h3>       
-                            </button>
-                    </Link>
+                        </Link>
+                        <Link to='/assessment'>
+                            <button onClick={() => {
+                                            setStartButton(false)
+                                            setSelectCategory(false)
+                                            setCanSelect(true)
+                                        }
+                                    } 
+                                    className="can-codes button-link">
+                                <FontAwesomeIcon className="faEarthAmericas icon" icon={faEarthAmericas} />
+                                <h3>Canada</h3>    
+                                </button>
+                        </Link>
+                        <Link to='/assessment'>
+                            <button onClick={() => {
+                                            setStartButton(false)
+                                            setSelectCategory(false)
+                                            setAllSelect(true)
+                                        }
+                                    } 
+                                    className="all-codes button-link">
+                                <FontAwesomeIcon className="faMailBulk icon" icon={faMailBulk} />
+                                <h3>All Codes</h3>       
+                                </button>
+                        </Link>
+                    </section>    
                 </section>
                 <div className="box-delivery-div">
                     <img className="box-delivery" src={DeliveryBoxOne}/> 
