@@ -6,6 +6,7 @@ import Spinner from './Spinner'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faFire } from '@fortawesome/free-solid-svg-icons'
 import './Codes.css';
+import { motion } from 'framer-motion'
 
 const CanCodes = ({ canCodesData }) => {
     const [randomizedCanCodesObject, setRandomizedCanCodesObject] = useState(null)
@@ -50,7 +51,20 @@ const CanCodes = ({ canCodesData }) => {
         <section>
             <section>
                 {loading ? <Spinner /> : 
-                <section className="testing-section-wrapper">
+                <motion.section 
+                initial={{
+                    opacity: 0
+                }}
+                animate={{
+                    opacity: 1
+                }}
+                transition={{
+                    duration: .5
+                }}
+                exit={{
+                    opacity: 0
+                }} 
+                className="testing-section-wrapper">
                 <div className="top-div">
                     <div>
                         <button className="exit-button-assessment" onClick={openExitModal}>X</button>
@@ -62,7 +76,19 @@ const CanCodes = ({ canCodesData }) => {
                 </div>    
                 </div>
                 {randomizedCanCodesObject ? 
-                <section className="testing-section">
+                <motion.section 
+                initial={{
+                    opacity: 0
+                }}
+                animate={{
+                    opacity: 1
+                }}
+                transition={{
+                    duration: .5
+                }}
+                exit={{
+                    opacity: 0
+                }} className="testing-section">
                     <section>
                         <h3 className="question">Where would you place a package with this code?</h3>
                     </section>
@@ -73,9 +99,9 @@ const CanCodes = ({ canCodesData }) => {
                     <section>
                         <RandomColors color={randomizedCanCodesObject[0].color} increaseStreaks={increaseStreaks} nextQuestion={nextQuestion}/>
                 </section>
-            </section>
+            </motion.section>
                 : null }
-            </section>}
+            </motion.section>}
             </section>
     </section>
     )

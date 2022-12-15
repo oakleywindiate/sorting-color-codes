@@ -145,3 +145,8 @@
     font-size: 25px;
     color: rgb(154, 153, 153);
   }
+
+  .exit-button-assessment:hover {
+    transform: scale(1.5);
+    transition: transform .5s;
+  }

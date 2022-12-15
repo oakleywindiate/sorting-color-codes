@@ -33,14 +33,14 @@ const Assesment = () => {
                 opacity: 1
             }}
             transition={{
-                duration: 1
+                duration: .5
             }}
             exit={{
                 opacity: 0
             }}
             className="selection-section">
                 <section className="all-assessment-section">
-                    <div className="sort-text">I want to learn...</div>
+                    <div className="sort-text">I would like to study...</div>
                     <section className="link-section">
                         <Link to='/assessment'>
                             <button onClick={() => {
@@ -125,7 +125,7 @@ const Assesment = () => {
                 exit={{
                     opacity: 0
                 }}>
-                    <div className="sort-text">Let's get started</div>
+                    <div className="sort-text">Press start to begin studying...</div>
                 </motion.section> : null} 
 
             {monoSelect ? 
@@ -143,7 +143,7 @@ const Assesment = () => {
                     exit={{
                         opacity: 0
                     }}
-                    className="start-test">START THE TEST</button>  
+                    className="start-test">START</button>  
                 </Link> : null}
             {splitSelect ? 
                 <Link to='/assessment-split-codes'>
@@ -160,7 +160,7 @@ const Assesment = () => {
                     exit={{
                         opacity: 0
                     }}
-                    className="start-test">START THE TEST</button>  
+                    className="start-test">START</button>  
                 </Link> : null}
             {canSelect ? 
                 <Link to='/assessment-can-codes'>
@@ -177,7 +177,7 @@ const Assesment = () => {
                     exit={{
                         opacity: 0
                     }}
-                    className="start-test">START THE TEST</button>  
+                    className="start-test">START</button>  
                 </Link> : null}
             {allSelect ? 
                 <Link to='/assessment-all-codes'>
@@ -194,7 +194,7 @@ const Assesment = () => {
                     exit={{
                         opacity: 0
                     }}
-                    className="start-test">START THE TEST</button>  
+                    className="start-test">START</button>  
                 </Link> : null}         
         </section>
         {!startButton ? 
