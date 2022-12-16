@@ -28,7 +28,7 @@ const Home = ({ data }) => {
                     </div>  
                     <div className="home-right">
                         <div>
-                            <div className="home-text">The fun and effective way to learn sorting codes!</div>
+                            <div className="home-text">The fun way to learn sorting codes!</div>
                             <Link to='/assessment'>
                                 <button className="get-started-button" onClick={() => setGetStartedButton(false)}>GET STARTED</button> 
                             </Link>

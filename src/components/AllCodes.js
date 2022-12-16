@@ -98,7 +98,7 @@ const AllCodes = ({ canCodesData, monoCodesData, splitCodesData }) => {
                         <h3 className="question">Where would you place a package with this code?</h3>
                     </section>
                     <section className="code-section">
-                        <div className="code">{randomizedAllCodesObject[0].state_postal}</div>
+                        <div className="code one">{randomizedAllCodesObject[0].state_postal}</div>
                         {randomizedAllCodesObject ? <div className="code">{randomizedAllCodesObject[0].code}</div> : null}
                     </section> 
                     <section>

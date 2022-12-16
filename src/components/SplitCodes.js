@@ -90,7 +90,7 @@ const SplitCodes = ({ splitCodesData }) => {
                         <h3 className="question">Where would you place a package with this code?</h3>
                     </section>
                     <section className="code-section">
-                        <div className="code">{randomizedSplitCodesObject[0].state_postal}</div>
+                        <div className="code one">{randomizedSplitCodesObject[0].state_postal}</div>
                         <div className="code">{randomizedSplitCodesObject[0].code}</div>
                     </section> 
                     <section>

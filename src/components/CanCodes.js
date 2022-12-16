@@ -93,7 +93,7 @@ const CanCodes = ({ canCodesData }) => {
                         <h3 className="question">Where would you place a package with this code?</h3>
                     </section>
                     <section className="code-section">
-                        <div className="code">{randomizedCanCodesObject[0].state_postal}</div>
+                        <div className="code one">{randomizedCanCodesObject[0].state_postal}</div>
                         <div className="code">{randomizedCanCodesObject[0].code}</div>
                     </section> 
                     <section>

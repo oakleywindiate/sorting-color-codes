@@ -51,7 +51,7 @@ const Assesment = () => {
                                     } 
                                     className="mono-codes button-link">
                                 <FontAwesomeIcon className="faArrowTurnUp icon" icon={faArrowTurnUp} />
-                                <h3>Mono</h3>
+                                <h3 className="button-font">Mono</h3>
                                 </button>
                         </Link>
                         <Link to='/assessment'>
@@ -63,7 +63,7 @@ const Assesment = () => {
                                     }
                                     className="split-codes button-link">
                                 <FontAwesomeIcon className="faArrowsSplitUpAndLeft icon" icon={faArrowsSplitUpAndLeft} />
-                                <h3>Split</h3>
+                                <h3 className="button-font">Split</h3>
                             </button>
                         </Link>
                         <Link to='/assessment'>
@@ -75,7 +75,7 @@ const Assesment = () => {
                                     } 
                                     className="can-codes button-link">
                                 <FontAwesomeIcon className="faEarthAmericas icon" icon={faEarthAmericas} />
-                                <h3>Canada</h3>    
+                                <h3 className="button-font">Canada</h3>    
                                 </button>
                         </Link>
                         <Link to='/assessment'>
@@ -87,7 +87,7 @@ const Assesment = () => {
                                     } 
                                     className="all-codes button-link">
                                 <FontAwesomeIcon className="faMailBulk icon" icon={faMailBulk} />
-                                <h3>All Codes</h3>       
+                                <h3 className="button-font">Combined</h3>       
                                 </button>
                         </Link>
                     </section>    
@@ -120,12 +120,12 @@ const Assesment = () => {
                     opacity: 1
                 }}
                 transition={{
-                    duration: 1
+                    duration: .75
                 }}
                 exit={{
                     opacity: 0
                 }}>
-                    <div className="sort-text">Press start to begin studying...</div>
+                    <div className="sort-text">Press start to begin</div>
                 </motion.section> : null} 
 
             {monoSelect ? 

@@ -16,7 +16,7 @@
 .code-section {
     width: 25%;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     padding: 2em;
 }
@@ -25,6 +25,10 @@
     font-family: 'Press Start 2P', cursive;
     margin: 0 0 50px;
     font-size: 3em;
+}
+
+.code.one {
+  margin-right: .5em;
 }
 
   .random-color {
@@ -94,7 +98,7 @@
     align-items: center;
     flex-direction: column;
     background-color: transparent;
-    color: #5dabcf;
+    color: rgb(159, 158, 158)aec;
     text-align: center;
     border-radius: 11px;
     -webkit-border-radius: 11px;
@@ -103,9 +107,9 @@
     font-family: 'Varela Round', sans-serif;
     font-weight: 700;
     font-size: 18px;
-    border: 2px solid #7ccbf0;
-    background-color: #d1eefb;
-    box-shadow: 0 4px 2px -2px #7ccbf0;
+    border: 2px solid rgb(212, 211, 211);
+    background-color: #e5eaec;
+    box-shadow: 0 4px 2px -2px rgb(212, 211, 211);
   }
 
   .question {
@@ -150,3 +154,67 @@
     transform: scale(1.5);
     transition: transform .5s;
   }
+
+  /* -------- MEDIA QUERIES -------- */
+
+
+@media screen and (max-width: 60em) {
+  .testing-section {
+    margin: 1em 4em 0;
+  }
+}
+
+@media screen and (max-width: 40em) {
+  .testing-section {
+    margin: .5em 2em 0;
+  }
+  .random-color {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1em;
+  }
+  .question {
+    margin: 0;
+  }
+  .code-section {
+    padding: 2em;
+  }
+  .code {
+    justify-content: center;
+    margin: 0;
+  }
+  .top-div {
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 35em) {
+  .testing-section {
+    margin: 1em 1em 0;
+  }
+  .random-color {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1em;
+  }
+  .question {
+    margin: 0;
+    font-size: 1.5em;
+  }
+  .code-section {
+    padding: 2em;
+  }
+  .code {
+    justify-content: center;
+    margin: 0;
+  }
+  .code.one {
+    margin-right: .5em;
+  }
+  .top-div {
+    margin: 0;
+  }
+  .streaks-div {
+    margin: 1em;
+  }
+}

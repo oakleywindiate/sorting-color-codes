@@ -1,7 +1,7 @@
 .home-page {
     display: flex;
     height: 100vh;
-    padding: 40px;
+    padding: 2em;
     flex-direction: row;
     align-items: center;
     justify-content: center;
@@ -12,7 +12,7 @@
 }
 
 .home-right {
-    margin: auto 48px;
+    margin: auto 2em;
     width: 60%;
     font-family: 'Varela Round', sans-serif;
     font-weight: 700;
@@ -20,9 +20,9 @@
 }
 
 .home-text {
-    font-size: 35px;
-    line-height: 40px;
-    margin: 0 0 50px;
+    font-size: 3.5em;
+    line-height: auto;
+    margin: 0 0 1.2em;
 }
 
 .box-home {
@@ -73,4 +73,94 @@
 	box-shadow: none;
 	position: relative;
 	top: .2em;
+}
+
+/* -------- MEDIA QUERIES -------- */
+
+@media screen and (max-width: 75em) {
+  .home-text {
+    font-size: 2.5em;
+  }
+}
+
+@media screen and (max-width: 70em) {
+  .home-text {
+    font-size: 2.5em;
+  }
+  .box-home {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 65em) {
+  .home-page {
+    flex-direction: column;
+    padding: 0;
+  }
+  .home-text {
+    font-size: 3em;
+    margin: 1em 0 1em;
+  }
+  .home-left {
+    width: 33%;
+  }
+  .home-right {
+    margin: 0;
+  }
+  .box-home {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 60em) {
+  .home-text {
+    font-size: 2.2em;
+    margin: 1em 0 1em;
+  }
+}
+
+@media screen and (max-width: 50em) {
+  .home-text {
+    font-size: 2em;
+    margin: 2em 0 1em;
+  }
+  .home-left {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 40em) {
+  .home-page {
+    justify-content: center;
+    padding: 1em;
+  }
+  .home-text {
+    font-size: 1.7em;
+    margin: 1em 0 1em;
+  }
+  .home-left {
+    width: 75%;
+  }
+  .home-right {
+    width: 75%;
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 35em) {
+  .home-page {
+    justify-content: center;
+    height: 90vh;
+  }
+  .home-text {
+    font-size: 1.5em;
+    margin: 2em .5em 1em;
+  }
+  .home-left {
+    width: 90%;
+  }
+  .home-right {
+    width: 90%;
+    margin: 0;
+  }
 }
