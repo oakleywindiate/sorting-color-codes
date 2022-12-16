@@ -79,7 +79,7 @@ function App() {
   // -------- RENDER -------- //
 
   return (
-    <AnimatePresence exitBeforeEnter>
+    <AnimatePresence mode='wait'>
       <div className="App">
         {/* <header className="App-header">
           <Header />
