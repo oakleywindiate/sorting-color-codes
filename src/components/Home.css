@@ -52,7 +52,7 @@
     display: inline-block;
     background-color: #50af0c;
     border-color: transparent;
-    min-width: 300px;
+    width: 100%;
     border-radius: 11px;
     -webkit-border-radius: 11px;
 	  -moz-border-radius: 11px;
@@ -154,8 +154,8 @@
     height: 90vh;
   }
   .home-text {
-    font-size: 1.5em;
-    margin: 2em .5em 1em;
+    font-size: 1.3em;
+    margin: 4em 0 1em;
   }
   .home-left {
     width: 90%;
@@ -165,3 +165,4 @@
     margin: 0;
   }
 }
+
