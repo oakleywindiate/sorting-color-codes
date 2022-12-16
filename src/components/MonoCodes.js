@@ -5,6 +5,7 @@ import RandomColors from './RandomColors'
 import Spinner from './Spinner'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faFire } from '@fortawesome/free-solid-svg-icons'
+import { motion } from 'framer-motion'
 
 const MonoCodes = ({ monoCodesData }) => {
     const [randomizedMonoCodesObject, setRandomizedMonoCodesObject] = useState(null)
@@ -51,7 +52,20 @@ const MonoCodes = ({ monoCodesData }) => {
         <section>
             <section>
                 {loading ? <Spinner /> : 
-                <section className="testing-section-wrapper">
+                <motion.section 
+                initial={{
+                    opacity: 0
+                }}
+                animate={{
+                    opacity: 1
+                }}
+                transition={{
+                    duration: .5
+                }}
+                exit={{
+                    opacity: 0
+                }}
+                  className="testing-section-wrapper">
                 <div className="top-div">
                     <div>
                         <button className="exit-button-assessment" onClick={openExitModal}>X</button>
@@ -63,7 +77,20 @@ const MonoCodes = ({ monoCodesData }) => {
                 </div>    
                 </div>
                 {randomizedMonoCodesObject ? 
-                <section className="testing-section">
+                <motion.section 
+                initial={{
+                    opacity: 0
+                }}
+                animate={{
+                    opacity: 1
+                }}
+                transition={{
+                    duration: .5
+                }}
+                exit={{
+                    opacity: 0
+                }}
+                className="testing-section">
                     <section>
                         <h3 className="question">Where would you place a package with this code?</h3>
                     </section>
@@ -74,9 +101,9 @@ const MonoCodes = ({ monoCodesData }) => {
                     <section>
                         <RandomColors color={randomizedMonoCodesObject[0].color} increaseStreaks={increaseStreaks} nextQuestion={nextQuestion}/>
             </section>
-            </section>
+            </motion.section>
                 : null }
-            </section>}
+            </motion.section>}
         </section>
     </section>
     )

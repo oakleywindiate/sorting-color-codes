@@ -5,6 +5,7 @@ import RandomColors from './RandomColors'
 import Spinner from './Spinner'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faFire } from '@fortawesome/free-solid-svg-icons'
+import { motion } from 'framer-motion'
 
 const SplitCodes = ({ splitCodesData }) => {
     const [randomizedSplitCodesObject, setRandomizedSplitCodesObject] = useState(null)
@@ -48,7 +49,19 @@ const SplitCodes = ({ splitCodesData }) => {
         <section>
             <section>
                 {loading ? <Spinner /> : 
-                <section className="testing-section-wrapper">
+                <motion.section 
+                initial={{
+                    opacity: 0
+                }}
+                animate={{
+                    opacity: 1
+                }}
+                transition={{
+                    duration: .5
+                }}
+                exit={{
+                    opacity: 0
+                }} className="testing-section-wrapper">
                 <div className="top-div">
                     <div>
                         <button className="exit-button-assessment" onClick={openExitModal}>X</button>
@@ -60,20 +73,32 @@ const SplitCodes = ({ splitCodesData }) => {
                 </div>    
                 </div>
                 {randomizedSplitCodesObject ? 
-                <section className="testing-section">
+                <motion.section 
+                initial={{
+                    opacity: 0
+                }}
+                animate={{
+                    opacity: 1
+                }}
+                transition={{
+                    duration: .5
+                }}
+                exit={{
+                    opacity: 0
+                }} className="testing-section">
                     <section>
                         <h3 className="question">Where would you place a package with this code?</h3>
                     </section>
                     <section className="code-section">
-                        <div className="code">{randomizedSplitCodesObject[0].state_postal}</div>
+                        <div className="code one">{randomizedSplitCodesObject[0].state_postal}</div>
                         <div className="code">{randomizedSplitCodesObject[0].code}</div>
                     </section> 
                     <section>
                         <RandomColors color={randomizedSplitCodesObject[0].color} increaseStreaks={increaseStreaks} nextQuestion={nextQuestion}/>
                 </section>
-            </section>
+            </motion.section>
                 : null }
-            </section>}
+            </motion.section>}
             </section>
     </section>
     )

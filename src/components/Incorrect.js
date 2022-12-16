@@ -1,15 +1,28 @@
 import React, { useRef } from "react";
 import ReactDom from "react-dom";
-import { Link } from "react-router-dom";
 import './Modal.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCircleXmark } from '@fortawesome/free-regular-svg-icons'
+import { motion } from "framer-motion";
 
 const Incorrect = ({ setShowIncorrectModal, nextQuestion, color }) => {
   const modalRef = useRef();
 
   return ReactDom.createPortal(
-    <div className="container-incorrect" ref={modalRef}>
+    <motion.div 
+    initial={{
+      opacity: 0
+    }}
+    animate={{
+        opacity: 1
+    }}
+    transition={{
+        duration: .5
+    }}
+    exit={{
+        opacity: 0
+    }}
+    className="container-incorrect" ref={modalRef}>
       <div className="modal-incorrect">
         <div className="incorrect-left">
           <FontAwesomeIcon className="faCircleXmark icon" icon={faCircleXmark} />
@@ -26,7 +39,7 @@ const Incorrect = ({ setShowIncorrectModal, nextQuestion, color }) => {
           }>NEXT</button>
         </div>
       </div>
-    </div>,
+    </motion.div>,
     document.getElementById("portal")
   );
 };

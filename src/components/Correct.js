@@ -1,9 +1,9 @@
 import React, { useRef } from "react";
 import ReactDom from "react-dom";
-import { Link } from "react-router-dom";
 import './Modal.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCircleCheck } from '@fortawesome/free-regular-svg-icons'
+import { motion } from "framer-motion";
 
 const Correct = ({ setShowCorrectModal, nextQuestion}) => {
   const modalRef = useRef();
@@ -20,7 +20,20 @@ const Correct = ({ setShowCorrectModal, nextQuestion}) => {
   let randomCorrect = correctPrompts.sort(() => .5 - Math.random()).slice(0, 1);
 
   return ReactDom.createPortal(
-    <div className="container-correct .modal-fade" ref={modalRef}>
+    <motion.div 
+    initial={{
+      opacity: 0
+    }}
+    animate={{
+        opacity: 1
+    }}
+    transition={{
+        duration: .5
+    }}
+    exit={{
+        opacity: 0
+    }}
+    className="container-correct .modal-fade" ref={modalRef}>
       <div className="modal-correct">
         <div className="correct-left">
           <FontAwesomeIcon className="faCircleCheck icon" icon={faCircleCheck} />
@@ -36,7 +49,7 @@ const Correct = ({ setShowCorrectModal, nextQuestion}) => {
           }>NEXT</button>
         </div>
       </div>  
-    </div>,
+    </motion.div>,
     document.getElementById("portal")
   );
 };
