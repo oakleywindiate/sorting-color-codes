@@ -3,14 +3,14 @@ import React, { useEffect, useState } from 'react';
 import { Route, Link } from 'react-router-dom';
 
 // -------- COMPONENT IMPORTS -------- //
-import Assesment from './Components/Assessment';
-import Error from './Components/Error';
-import Header from './Components/Header';
-import Home from './Components/Home';
-import AllCodes from './Components/AllCodes';
-import CanCodes from './Components/CanCodes';
-import MonoCodes from './Components/MonoCodes';
-import SplitCodes from './Components/SplitCodes';
+import Assesment from './components/Assessment';
+import Error from './components/Error';
+import Header from './components/Header';
+import Home from './components/Home';
+import AllCodes from './components/AllCodes';
+import CanCodes from './components/CanCodes';
+import MonoCodes from './components/MonoCodes';
+import SplitCodes from './components/SplitCodes';
 
 
 // -------- CSS IMPORTS -------- //
