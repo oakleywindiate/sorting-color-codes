@@ -30,7 +30,7 @@ function App() {
 // -------- FETCH CALLS -------- //
 
   const getMonoCodes = async () => {
-    const url = 'http://localhost:3001/mono-codes'
+    const url = 'https://sorting-codes-api.netlify.app/.netlify/functions/api/mono-codes'
     setError(error)
 
     try {
@@ -43,7 +43,7 @@ function App() {
   }
 
   const getSplitCodes = async () => {
-    const url = 'http://localhost:3001/split-codes'
+    const url = 'https://sorting-codes-api.netlify.app/.netlify/functions/api/split-codes'
     setError(error)
 
     try {
@@ -56,7 +56,7 @@ function App() {
   }
 
   const getCanCodes = async () => {
-    const url = 'http://localhost:3001/can-codes'
+    const url = 'https://sorting-codes-api.netlify.app/.netlify/functions/api/can-codes'
     setError(error)
 
     try {
