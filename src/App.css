@@ -3,6 +3,7 @@
   height: 100vh;
   background-color: #000;
   overflow: hidden;
+  position: absolute;
 }
 
 .App-logo {
