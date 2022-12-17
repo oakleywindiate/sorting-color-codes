@@ -10,7 +10,7 @@ const Home = ({ data }) => {
 
   return (
     <div>
-        <section>
+        <section className="home-section">
             {getStartedButton ? 
                 <motion.div 
                 initial={{
