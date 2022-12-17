@@ -138,6 +138,7 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  position: absolute;
 }
 
 /* -------- MEDIA QUERIES -------- */
