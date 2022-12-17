@@ -155,6 +155,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    position: absolute;
   }
   .link-section {
     width: 75%;
@@ -190,6 +191,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    position: absolute;
   }
   .link-section {
     width: 80%;
@@ -259,6 +261,9 @@
 }
 
 @media screen and (max-width: 35em) {
+  .all-assessment-section {
+    position: absolute;
+  }
   .box-delivery {
     width: 40%;
   }
