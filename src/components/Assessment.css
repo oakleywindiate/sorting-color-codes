@@ -106,7 +106,7 @@
   display: inline-block;
   background-color: #50af0c;
   border-color: transparent;
-  width: 10em;
+  width: 15em;
   border-radius: 11px;
   -webkit-border-radius: 11px;
   -moz-border-radius: 11px;
@@ -137,6 +137,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 
 /* -------- MEDIA QUERIES -------- */
@@ -275,5 +276,14 @@
   .sort-text {
     margin: 0 .5em 1em;
     font-size: 1.5em;
+  }
+  .start-test {
+    width: 10em;
+  }
+}
+
+@media screen and (max-width: 15em) {
+  .start-test {
+    width: 8em;
   }
 }

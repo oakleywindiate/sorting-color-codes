@@ -84,7 +84,7 @@ function App() {
         {/* <header className="App-header">
           <Header />
         </header> */}
-        <main>
+        <main className="main-section">
           <Route exact path='/home' render={() => 
               <Home 
                 monoCodesData={monoCodes}
