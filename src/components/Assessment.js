@@ -106,7 +106,7 @@ const Assesment = () => {
                     opacity: 0
                 }}
                 className="box-delivery-div">
-                    <img className="box-delivery" src={DeliveryBoxOne}/> 
+                    <img className="box-delivery" src={DeliveryBoxOne} alt="pixel art of a person delivering mail"/> 
                 </motion.div>
             </motion.section> 
         : null }
@@ -211,7 +211,7 @@ const Assesment = () => {
         exit={{
             opacity: 0
         }}className="box-delivery-div-two">
-            <img className="box-delivery-two" src={DeliveryBoxTwo}/> 
+            <img className="box-delivery-two" src={DeliveryBoxTwo} alt="pixel art of a person carrying a box"/> 
         </motion.div> : null }
     </section>
   )

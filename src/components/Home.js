@@ -24,7 +24,7 @@ const Home = ({ data }) => {
                 }}
                 className="home-page">
                     <div className="home-left">
-                        <img className="box-home" src={Box}/>  
+                        <img className="box-home" src={Box} alt="pixel art of a shipping box"/>  
                     </div>  
                     <div className="home-right">
                         <div>

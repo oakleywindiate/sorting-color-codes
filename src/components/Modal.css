@@ -294,6 +294,7 @@
   .exit-modal-question {
     font-size: 1.2em;
     text-align: center;
+    margin: 0 1em 0;
   }
   .exit-modal-buttons {
     display: flex;
