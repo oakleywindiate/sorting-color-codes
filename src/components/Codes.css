@@ -216,6 +216,9 @@
     margin: 0;
   }
   .streaks-div {
-    margin: 1em;
+    margin: 0 1em 0;
+  }
+  .exit-button-assessment {
+    margin: 0 1em 0;
   }
 }
