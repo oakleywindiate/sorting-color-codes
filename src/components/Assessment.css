@@ -106,7 +106,7 @@
   display: inline-block;
   background-color: #50af0c;
   border-color: transparent;
-  min-width: 300px;
+  width: 10em;
   border-radius: 11px;
   -webkit-border-radius: 11px;
   -moz-border-radius: 11px;
@@ -260,10 +260,10 @@
 
 @media screen and (max-width: 35em) {
   .box-delivery {
-    width: 50%;
+    width: 40%;
   }
   .box-delivery-two {
-    width: 50%;
+    width: 40%;
   }
   .link-section {
     display: grid;
@@ -271,5 +271,9 @@
   }
   .button-link {
     width: 100%;
+  }
+  .sort-text {
+    margin: 0 .5em 1em;
+    font-size: 1.5em;
   }
 }
