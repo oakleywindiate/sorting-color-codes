@@ -304,6 +304,6 @@
   }
   .container-correct,
   .container-incorrect {
-    overflow-y: hidden;
+    overflow: hidden;
   }
 }
