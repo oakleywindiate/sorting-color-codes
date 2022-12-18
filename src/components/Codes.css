@@ -17,6 +17,7 @@
     justify-content: flex-start;
     display: flex;
     flex-direction: column;
+    margin: 2em 0em 0;
 }
 
 .code-section {
