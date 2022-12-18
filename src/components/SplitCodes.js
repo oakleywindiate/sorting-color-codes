@@ -47,7 +47,7 @@ const SplitCodes = ({ splitCodesData }) => {
 
     return (
         <section>
-            <section>
+            <section className="codes-wrapper">
                 {loading ? <Spinner /> : 
                 <motion.section 
                 initial={{
