@@ -191,7 +191,7 @@
 
 @media screen and (max-width: 35em) {
   .testing-section {
-    margin: 1em 1em 0;
+    margin: auto;
   }
   .random-color {
     display: grid;
