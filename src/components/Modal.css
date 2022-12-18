@@ -304,6 +304,7 @@
   }
   .container-correct,
   .container-incorrect {
-    overflow: hidden;
+    height: 20vh;
+    position: fixed;
   }
 }
