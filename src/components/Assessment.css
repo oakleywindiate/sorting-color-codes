@@ -265,7 +265,7 @@
     position: absolute;
   }
   .selection-section {
-    height: 75vh;
+    height: 80vh;
   }
   .box-delivery {
     width: 40%;
@@ -285,7 +285,7 @@
     font-size: 1.5em;
   }
   .start-button-section {
-    height: 75vh;
+    height: 80vh;
   }
   .start-test {
     width: 10em;
