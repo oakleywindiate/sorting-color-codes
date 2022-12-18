@@ -264,6 +264,9 @@
   .all-assessment-section {
     position: absolute;
   }
+  .selection-section {
+    height: 75vh;
+  }
   .box-delivery {
     width: 40%;
   }
@@ -280,6 +283,9 @@
   .sort-text {
     margin: 0 .5em 1em;
     font-size: 1.5em;
+  }
+  .start-button-section {
+    height: 75vh;
   }
   .start-test {
     width: 10em;
