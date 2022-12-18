@@ -302,4 +302,8 @@
     justify-content: space-evenly;
     height: 50%;
   }
+  .container-correct,
+  .container-incorrect {
+    overflow: hidden;
+  }
 }
