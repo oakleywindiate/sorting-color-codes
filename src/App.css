@@ -56,10 +56,9 @@ a:link {
   }
 }
 
-/* @media screen and (max-width: 35em) {
+@media screen and (max-width: 35em) {
   html, body {
-    margin: 0; 
     height: 100%; 
     overflow: hidden
   }
-} */
+}
