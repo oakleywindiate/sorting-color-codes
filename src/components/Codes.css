@@ -6,7 +6,7 @@
 .testing-section-wrapper {
     background-color: #FFF;
     width: 100vw;
-    height: 80vh;
+    height: 100vh;
     position: absolute;
     overflow: hidden;
 } 
@@ -205,14 +205,14 @@
   .random-color {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1em;
+    gap: .5em;
   }
   .question {
     margin: 0;
     font-size: 1.5em;
   }
   .code-section {
-    padding: 2em;
+    padding: 1em;
   }
   .code {
     justify-content: center;
@@ -223,6 +223,7 @@
   }
   .top-div {
     margin: 0;
+    height: 8vh;
   }
   .streaks-div {
     margin: 0 1em 0;
