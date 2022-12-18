@@ -1,7 +1,12 @@
+.codes-wrapper {
+  height: 100vh;
+  background-color: #FFF;
+}
+
 .testing-section-wrapper {
     background-color: #FFF;
     width: 100vw;
-    height: 100vh;
+    height: 80vh;
     position: absolute;
     overflow: hidden;
 } 

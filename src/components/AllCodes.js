@@ -53,7 +53,7 @@ const AllCodes = ({ canCodesData, monoCodesData, splitCodesData }) => {
 
     return (
         <section>
-            <section>
+            <section className="codes-wrapper">
                 {loading ? <Spinner /> :
                 <motion.section 
                 initial={{
