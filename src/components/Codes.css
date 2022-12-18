@@ -7,9 +7,9 @@
 } 
 
 .testing-section {
-    height: 60vh;
+    height: 100vh;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     display: flex;
     flex-direction: column;
 }
@@ -190,8 +190,12 @@
 }
 
 @media screen and (max-width: 35em) {
+  .testing-section-wrapper {
+    overflow: hidden;
+  }
   .testing-section {
-    margin: auto;
+    margin: .5em;
+    overflow: hidden;
   }
   .random-color {
     display: grid;
