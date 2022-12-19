@@ -261,11 +261,8 @@
 }
 
 @media screen and (max-width: 35em) {
-  .all-assessment-section {
-    position: absolute;
-  }
   .selection-section {
-    height: 100vh;
+    height: 85vh;
   }
   .box-delivery {
     width: 55%;
@@ -285,7 +282,7 @@
     font-size: 1.5em;
   }
   .start-button-section {
-    height: 100vh;
+    height: 85vh;
   }
   .start-test {
     width: 10em;
