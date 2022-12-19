@@ -223,8 +223,8 @@
     margin-right: .5em;
   }
   .top-div {
-    margin: 0;
-    height: 10vh;
+    margin: .5em .5em .5em;
+    height: 12vh;
   }
   .streaks-div {
     margin: 0 1em 0;
