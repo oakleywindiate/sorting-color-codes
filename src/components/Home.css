@@ -169,7 +169,7 @@
 @media screen and (max-width: 35em) {
   .home-page {
     justify-content: center;
-    height: 80vh;
+    height: 100vh;
   }
   .home-text {
     font-size: 1.3em;
